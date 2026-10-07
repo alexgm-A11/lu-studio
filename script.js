@@ -40,6 +40,7 @@ document.querySelectorAll('[data-view]').forEach(button=>button.addEventListener
  document.querySelectorAll('[data-page]').forEach(page=>page.hidden=page.dataset.page!==button.dataset.view);
  document.querySelectorAll('[data-view]').forEach(item=>{item.classList.toggle('active',item===button);if(item===button)item.setAttribute('aria-current','page');else item.removeAttribute('aria-current')});
  $('#pageName').textContent=button.textContent.trim().replace(/^[▦▤ƒ]\s*/, '');
+ document.querySelector('.badge').textContent=button.dataset.view==='newton'?'Newton':'Doolittle';
  window.scrollTo({top:0,behavior:'smooth'});
 }));
 document.querySelector('#editor').addEventListener('input',()=>{$('#customOut').innerHTML='<div class="empty-state"><h3>Datos actualizados</h3><p>Pulsa «Resolver sistema» para recalcular los resultados.</p></div>'});
